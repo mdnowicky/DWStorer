@@ -1,0 +1,1328 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DocuWare.RestClient</name>
+    </assembly>
+    <members>
+        <member name="T:DocuWare.Services.Http.Client.Connector">
+            <summary>
+            Some helpers to connect to a service.
+            </summary>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.Connector.CreateDefaultRequestHandler">
+            <summary>
+            Creates the default request handler.
+            </summary>
+            <returns>A web request handler set up to use cookies and GZIP compression.</returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.Connector.CreateConnection(System.String)">
+            <summary>
+            Creates the connection with the specified base URI.
+            </summary>
+            <param name="baseUri">The base URI.</param>
+            <returns>A HTTP client proxy handling further request to the specified URI.</returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.Connector.CreateConnection(System.Uri)">
+            <summary>
+            Creates the connection with the specified base URI.
+            </summary>
+            <param name="baseUri">The base URI.</param>
+            <returns>A HTTP client proxy handling further request to the specified URI.</returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.Connector.CreateConnection(System.Uri,System.Net.Http.HttpMessageHandler)">
+            <summary>
+            Creates the connection with the specified base URI.
+            </summary>
+            <param name="baseUri">The base URI.</param>
+            <param name="clientHandler">The client handler.</param>
+            <returns>A HTTP client proxy handling further request to the specified URI.</returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.Connector.CreateConnection(System.String,System.Net.Http.HttpMessageHandler)">
+            <summary>
+            Creates the connection with the specified base URI.
+            </summary>
+            <param name="baseUri">The base URI.</param>
+            <param name="clientHandler">The client handler.</param>
+            <returns>A HTTP client proxy handling further request to the specified URI.</returns>
+        </member>
+        <member name="T:DocuWare.Services.Http.Client.ContentHelper">
+            <summary>
+            Some helpers for handling content.
+            </summary>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.ContentHelper.CreateXmlContent``1(``0,System.String)">
+            <summary>
+            Creates the content of the XML.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="o">The o.</param>
+            <param name="contentType">Type of the content.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.ContentHelper.CreateFileContent(DocuWare.Services.Http.Client.IFileUploadInfo,System.String)">
+            <summary>
+            Creates the content of the file.
+            </summary>
+            <param name="fileInfo">The file info.</param>
+            <param name="contentType">Type of the content.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.ContentHelper.CreateContent(System.Byte[],System.String)">
+            <summary>
+            Creates the content of the file.
+            </summary>
+            <param name="data">The body data.</param>
+            <param name="contentType">Type of the content.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.ContentHelper.CreateFileContent(System.IO.Stream,System.String)">
+            <summary>
+            Creates the content of the file.
+            </summary>
+            <param name="stream">The stream.</param>
+            <param name="contentType">Type of the content.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.ContentHelper.CreateContent(System.Xml.Linq.XNode,System.String)">
+            <summary>
+            Creates the content.
+            </summary>
+            <param name="xmlNode">The XML node.</param>
+            <param name="requestContentType">Type of the request content.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.ContentHelper.AddFileName(System.Net.Http.HttpContent,System.String,System.String)">
+            <summary>
+            Adds the name of the file.
+            </summary>
+            <param name="content">The content.</param>
+            <param name="name">The name.</param>
+            <param name="fileName">Name of the file.</param>
+            <returns></returns>
+        </member>
+        <member name="T:DocuWare.Services.Http.Client.ExceptionExtensions">
+            <summary>
+            Extensions for <see cref="T:System.AggregateException" />
+            </summary>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.ExceptionExtensions.GetRealException(System.AggregateException)">
+            <summary>
+            Gets the real exception of an <see cref="T:System.AggregateException" /> instance.
+            </summary>
+            <param name="aggregateException">The aggregate exception.</param>
+            <returns>
+            The first non-<see cref="T:System.AggregateException" /> in the hierarchy of aggregated exceptions.
+            </returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.ExceptionExtensions.GetInnerMostException(System.Exception)">
+            <summary>
+            Gets the inner most exception.
+            </summary>
+            <param name="exception">The exception.</param>
+            <returns>The innermost exception.</returns>
+        </member>
+        <member name="T:DocuWare.Services.Http.Client.HttpClientProxy">
+            <summary>
+            A wrapper for a HTTP Client
+            </summary>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.HttpClientProxy.#ctor(System.Net.Http.HttpClient)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocuWare.Services.Http.Client.HttpClientProxy"/> class.
+            </summary>
+            <param name="httpClient">The HTTP client.</param>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.HttpClientProxy.ReplaceHttpClient(System.Net.Http.HttpClient)">
+            <summary>
+            Replaces the HTTP client.
+            </summary>
+            <param name="httpClient">The HTTP client.</param>
+        </member>
+        <member name="P:DocuWare.Services.Http.Client.HttpClientProxy.HttpClient">
+            <summary>
+            Gets or sets the HTTP client.
+            </summary>
+            <value>
+            The HTTP client.
+            </value>
+        </member>
+        <member name="P:DocuWare.Services.Http.Client.HttpClientProxy.BaseAddress">
+            <summary>
+            Gets the base address.
+            </summary>
+            <value>
+            The base address.
+            </value>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.HttpClientProxy.op_Implicit(DocuWare.Services.Http.Client.HttpClientProxy)~System.Net.Http.HttpClient">
+            <summary>
+            Performs an implicit conversion from <see cref="T:DocuWare.Services.Http.Client.HttpClientProxy"/> to <see cref="P:DocuWare.Services.Http.Client.HttpClientProxy.HttpClient"/>.
+            </summary>
+            <param name="httpClientProxy">The HTTP client proxy.</param>
+            <returns>
+            The result of the conversion.
+            </returns>
+        </member>
+        <member name="T:DocuWare.Services.Http.Client.IFileUploadInfo">
+            <summary>
+            An interface for wrapping information of an uploaded file.
+            </summary>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.IFileUploadInfo.CreateStream">
+            <summary>
+            Creates the stream representing the content of the instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:DocuWare.Services.Http.Client.IFileUploadInfo.ContentType">
+            <summary>
+            Gets the content type (MIME type, Internet Media type).
+            </summary>
+            <value>
+            The type of the content (MIME type, Internet Media type).
+            </value>
+        </member>
+        <member name="P:DocuWare.Services.Http.Client.IFileUploadInfo.Name">
+            <summary>
+            Gets the name of the file.
+            </summary>
+            <value>
+            The name of the file.
+            </value>
+        </member>
+        <member name="P:DocuWare.Services.Http.Client.IFileUploadInfo.Length">
+            <summary>
+            Gets the length (in bytes) of the file.
+            </summary>
+            <value>
+            The size of the file in bytes.
+            </value>
+        </member>
+        <member name="P:DocuWare.Services.Http.Client.IFileUploadInfo.LastWriteTimeUtc">
+            <summary>
+            Gets the last write time in UTC.
+            </summary>
+            <value>
+            The last write time in UTC.
+            </value>
+        </member>
+        <member name="T:DocuWare.Services.Http.Client.XElementWrapper">
+            <summary>
+            A wrapper for XElements.
+            </summary>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.XElementWrapper.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocuWare.Services.Http.Client.XElementWrapper"/> class.
+            </summary>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.XElementWrapper.#ctor(System.Xml.Linq.XElement)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocuWare.Services.Http.Client.XElementWrapper"/> class.
+            </summary>
+            <param name="el">The el.</param>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.XElementWrapper.op_Implicit(System.Xml.Linq.XElement)~DocuWare.Services.Http.Client.XElementWrapper">
+            <summary>
+            Performs an implicit conversion from <see cref="T:System.Xml.Linq.XElement"/> to <see cref="T:DocuWare.Services.Http.Client.XElementWrapper"/>.
+            </summary>
+            <param name="element">The element.</param>
+            <returns>
+            The result of the conversion.
+            </returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.XElementWrapper.op_Implicit(DocuWare.Services.Http.Client.XElementWrapper)~System.Xml.Linq.XElement">
+            <summary>
+            Performs an implicit conversion from <see cref="T:DocuWare.Services.Http.Client.XElementWrapper"/> to <see cref="T:System.Xml.Linq.XElement"/>.
+            </summary>
+            <param name="elementWrapper">The element wrapper.</param>
+            <returns>
+            The result of the conversion.
+            </returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.XElementWrapper.GetSchema">
+            <summary>
+            This method is reserved and should not be used. When implementing the IXmlSerializable interface, you should return null (Nothing in Visual Basic) from this method, and instead, if specifying a custom schema is required, apply the <see cref="T:System.Xml.Serialization.XmlSchemaProviderAttribute" /> to the class.
+            </summary>
+            <returns>
+            An <see cref="T:System.Xml.Schema.XmlSchema" /> that describes the XML representation of the object that is produced by the <see cref="M:System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)" /> method and consumed by the <see cref="M:System.Xml.Serialization.IXmlSerializable.ReadXml(System.Xml.XmlReader)" /> method.
+            </returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.XElementWrapper.ReadXml(System.Xml.XmlReader)">
+            <summary>
+            Generates an object from its XML representation.
+            </summary>
+            <param name="reader">The <see cref="T:System.Xml.XmlReader" /> stream from which the object is deserialized.</param>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.XElementWrapper.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            Converts an object into its XML representation.
+            </summary>
+            <param name="writer">The <see cref="T:System.Xml.XmlWriter" /> stream to which the object is serialized.</param>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.XElementWrapper.Save(System.IO.Stream)">
+            <summary>
+            Outputs the wrapped element to the specified <see cref="T:System.IO.Stream"/> instance.
+            </summary>
+            <param name="stream">The stream.</param>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.XElementWrapper.Save(System.IO.TextWriter)">
+            <summary>
+            Outputs the wrapped element to the specified <see cref="T:System.IO.TextWriter"/> instance.
+            </summary>
+            <param name="textWriter">The text writer.</param>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.XElementWrapper.Save(System.Xml.XmlWriter)">
+            <summary>
+            Outputs the wrapped element to the specified <see cref="T:System.Xml.XmlWriter" /> instance.
+            </summary>
+            <param name="xmlWriter">The XML writer.</param>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.XElementWrapper.Save(System.IO.Stream,System.Xml.Linq.SaveOptions)">
+            <summary>
+            Saves the specified stream.
+            </summary>
+            <param name="stream">The stream.</param>
+            <param name="options">The options.</param>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.XElementWrapper.Save(System.IO.TextWriter,System.Xml.Linq.SaveOptions)">
+            <summary>
+            Outputs the wrapped element to the specified <see cref="T:System.IO.Stream"/> instance.
+            </summary>
+            <param name="textWriter">The text writer.</param>
+            <param name="options">The options.</param>
+        </member>
+        <member name="T:DocuWare.Services.Http.Client.UriTemplateExtensions">
+            <summary>
+            Helpers for handling URI templates.
+            </summary>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.UriTemplateExtensions.FindTemplate(System.Collections.Generic.IEnumerable{DocuWare.Services.Http.Client.UriTemplateDescription},System.String)">
+            <summary>
+            Finds the specified URI template from the list.
+            </summary>
+            <param name="templates">The templates.</param>
+            <param name="templateName">Name of the template.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.UriTemplateExtensions.CreateUrl(System.Collections.Generic.IEnumerable{DocuWare.Services.Http.Client.UriTemplateDescription},System.String,System.Object)">
+            <summary>
+            Creates the URL for the specified template and binds parameters.
+            </summary>
+            <param name="templates">The templates.</param>
+            <param name="templateName">Name of the template.</param>
+            <param name="parameters">The parameters.</param>
+            <returns>The URL with bound parameters.</returns>
+            <exception cref="T:System.ArgumentException">The specified template '{0}' cannot be found.;templateName</exception>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.UriTemplateExtensions.CreateUrl(System.Collections.Generic.IEnumerable{DocuWare.Services.Http.Client.UriTemplateDescription},System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Object}})">
+            <summary>
+            Creates the URL for the specified template and binds parameters.
+            </summary>
+            <param name="templates">The templates.</param>
+            <param name="templateName">Name of the template.</param>
+            <param name="parameters">The parameters.</param>
+            <returns>The URL with bound parameters.</returns>
+            <exception cref="T:System.ArgumentException">The specified template '{0}' cannot be found.;templateName</exception>
+        </member>
+        <member name="T:DocuWare.Services.Http.Client.HttpClientRequestException">
+            <summary>
+            A client HTTP client exception.
+            </summary>
+        </member>
+        <member name="P:DocuWare.Services.Http.Client.HttpClientRequestException.StatusCode">
+            <summary>
+            Gets the status code.
+            </summary>
+            <value>
+            The status code.
+            </value>
+        </member>
+        <member name="P:DocuWare.Services.Http.Client.HttpClientRequestException.ReasonPhrase">
+            <summary>
+            Gets the reason phrase.
+            </summary>
+            <value>
+            The reason phrase.
+            </value>
+        </member>
+        <member name="P:DocuWare.Services.Http.Client.HttpClientRequestException.Method">
+            <summary>
+            Gets the method.
+            </summary>
+            <value>
+            The method.
+            </value>
+        </member>
+        <member name="P:DocuWare.Services.Http.Client.HttpClientRequestException.Uri">
+            <summary>
+            Gets the URI.
+            </summary>
+            <value>
+            The URI.
+            </value>
+        </member>
+        <member name="P:DocuWare.Services.Http.Client.HttpClientRequestException.Message">
+            <summary>
+            Gets a message that describes the current exception.
+            </summary>
+            <returns>The error message that explains the reason for the exception, or an empty string("").</returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.HttpClientRequestException.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+            <PermissionSet>
+              <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" PathDiscovery="*AllFiles*" />
+              </PermissionSet>
+        </member>
+        <member name="P:DocuWare.Services.Http.Client.HttpClientRequestException.Error">
+            <summary>
+            Gets the error.
+            </summary>
+            <value>
+            The error.
+            </value>
+        </member>
+        <member name="P:DocuWare.Services.Http.Client.HttpClientRequestException.HtmlError">
+            <summary>
+            Gets the HTML error.
+            </summary>
+            <value>
+            The HTML error.
+            </value>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.HttpClientRequestException.#ctor(System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocuWare.Services.Http.Client.HttpClientRequestException" /> class.
+            </summary>
+            <param name="statusCode">The status code.</param>
+            <param name="reasonPhrase">The reason phrase.</param>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.HttpClientRequestException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocuWare.Services.Http.Client.HttpClientRequestException" /> class.
+            </summary>
+            <param name="messageText">The message text.</param>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.HttpClientRequestException.#ctor(System.Int32,System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocuWare.Services.Http.Client.HttpClientRequestException" /> class.
+            </summary>
+            <param name="statusCode">The status code.</param>
+            <param name="reasonPhrase">The reason phrase.</param>
+            <param name="inner">The inner.</param>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.HttpClientRequestException.Create(System.Net.Http.HttpResponseMessage,System.Exception)">
+            <summary>
+            Creates the specified message.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="inner">The inner exception.</param>
+            <returns>A task which creates the message.</returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.HttpClientRequestException.Create(System.Net.Http.HttpResponseMessage,System.String)">
+            <summary>
+            Creates the specified message.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="messageText">The message text.</param>
+            <returns></returns>
+        </member>
+        <member name="T:DocuWare.Services.Http.Client.IRelations">
+            <summary>
+            Handles relations between objects.
+            </summary>
+        </member>
+        <member name="P:DocuWare.Services.Http.Client.IRelations.Links">
+            <summary>
+            Gets the links.
+            </summary>
+            <value>
+            The links.
+            </value>
+        </member>
+        <member name="T:DocuWare.Services.Http.Client.IHttpClientProxy">
+            <summary>
+            Provides a proxy for handling HTTP communication.
+            </summary>
+        </member>
+        <member name="P:DocuWare.Services.Http.Client.IHttpClientProxy.Proxy">
+            <summary>
+            Gets or sets the proxy.
+            </summary>
+            <value>
+            The proxy.
+            </value>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.IHttpClientProxy.SetProxy(DocuWare.Services.Http.Client.HttpClientProxy)">
+            <summary>
+            Sets the proxy.
+            </summary>
+            <param name="proxy">The proxy.</param>
+        </member>
+        <member name="T:DocuWare.Services.Http.Client.IRelationsWithProxy">
+            <summary>
+            Contains a proxy for following relations.
+            </summary>
+        </member>
+        <member name="T:DocuWare.Services.Http.Client.RelationsWithProxyExtensions">
+            <summary>
+            Extensions
+            </summary>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.RelationsWithProxyExtensions.GetBaseUri(DocuWare.Services.Http.Client.IRelationsWithProxy)">
+            <summary>
+            Gets the base URI of the specified relations instance.
+            </summary>
+            <param name="relationsWithProxy">The relations with proxy.</param>
+            <returns>The base URI of the specified relations instance.</returns>
+        </member>
+        <member name="T:DocuWare.Services.Http.Client.MethodInvocation">
+            <summary>
+            Helpers for calling HTTP methods.
+            </summary>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.MethodInvocation.CreateDeserializedResponse``1(System.Threading.Tasks.Task{System.Net.Http.HttpResponseMessage})">
+            <summary>
+            Creates the deserialized response.
+            </summary>
+            <typeparam name="TResponse">The type of the response.</typeparam>
+            <param name="response">The response.</param>
+            <returns>A task executing the request and returning the response.</returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.MethodInvocation.CreateDeserializedResponse``1(System.Threading.Tasks.Task{System.Net.Http.HttpResponseMessage},DocuWare.Services.Http.Client.HttpClientProxy)">
+            <summary>
+            Creates the deserialized response.
+            </summary>
+            <typeparam name="TResponse">The type of the response.</typeparam>
+            <param name="response">The response.</param>
+            <param name="proxy">The proxy.</param>
+            <returns>A task executing the request and returning the response.</returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.MethodInvocation.CreateAcceptTypeFromString(System.String[])">
+            <summary>
+            Creates the accept type from string.
+            </summary>
+            <param name="acceptType">Type of the accept.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.MethodInvocation.Send``1(DocuWare.Services.Http.Client.IRelations,System.Net.Http.HttpMethod,System.Net.Http.HttpClient,System.String,System.String[])">
+            <summary>
+            Sends a message to the specified HTTP client.
+            </summary>
+            <typeparam name="TResponse">The type of the response.</typeparam>
+            <param name="relations">The relations.</param>
+            <param name="method">The method.</param>
+            <param name="httpClient">The HTTP client.</param>
+            <param name="relationName">Name of the relation.</param>
+            <param name="acceptType">Type of the accept.</param>
+            <returns>A task executing the request and returning the response.</returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.MethodInvocation.Send``1(DocuWare.Services.Http.Client.IRelations,System.Threading.CancellationToken,System.Net.Http.HttpMethod,System.Net.Http.HttpClient,System.String,System.String[])">
+            <summary>
+            Sends a message to the specified HTTP client.
+            </summary>
+            <typeparam name="TResponse">The type of the response.</typeparam>
+            <param name="relations">The relations.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <param name="method">The method.</param>
+            <param name="httpClient">The HTTP client.</param>
+            <param name="relationName">Name of the relation.</param>
+            <param name="acceptType">Type of the accept.</param>
+            <returns>
+            A task executing the request and returning the response.
+            </returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.MethodInvocation.Send``1(DocuWare.Services.Http.Client.IRelationsWithProxy,System.Net.Http.HttpMethod,System.String,System.String[])">
+            <summary>
+            Sends a message to the specified proxy.
+            </summary>
+            <typeparam name="TResponse">The type of the response.</typeparam>
+            <param name="relations">The relations.</param>
+            <param name="method">The method.</param>
+            <param name="relationName">Name of the relation.</param>
+            <param name="acceptType">Type of the accept.</param>
+            <returns>A task executing the request and returning the response.</returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.MethodInvocation.Send``1(DocuWare.Services.Http.Client.IRelationsWithProxy,System.Threading.CancellationToken,System.Net.Http.HttpMethod,System.String,System.String[])">
+            <summary>
+            Sends a message to the specified proxy.
+            </summary>
+            <typeparam name="TResponse">The type of the response.</typeparam>
+            <param name="relations">The relations.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <param name="method">The method.</param>
+            <param name="relationName">Name of the relation.</param>
+            <param name="acceptType">Type of the accept.</param>
+            <returns>
+            A task executing the request and returning the response.
+            </returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.MethodInvocation.Send``1(DocuWare.Services.Http.Client.HttpClientProxy,System.String,System.Net.Http.HttpMethod,System.String[])">
+            <summary>
+            Sends a message to the specified HTTP client.
+            </summary>
+            <typeparam name="TResponse">The type of the response.</typeparam>
+            <param name="httpClientProxy">The HTTP client proxy.</param>
+            <param name="url">The url.</param>
+            <param name="method">The method.</param>
+            <param name="acceptType">Type of the accept.</param>
+            <returns>
+            A task executing the request and returning the response.
+            </returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.MethodInvocation.Send``1(DocuWare.Services.Http.Client.HttpClientProxy,System.Threading.CancellationToken,System.String,System.Net.Http.HttpMethod,System.String[])">
+            <summary>
+            Sends a message to the specified HTTP client.
+            </summary>
+            <typeparam name="TResponse">The type of the response.</typeparam>
+            <param name="httpClientProxy">The HTTP client proxy.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <param name="url">The url.</param>
+            <param name="method">The method.</param>
+            <param name="acceptType">Type of the accept.</param>
+            <returns>
+            A task executing the request and returning the response.
+            </returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.MethodInvocation.Send``2(DocuWare.Services.Http.Client.IRelations,DocuWare.Services.Http.Client.HttpClientProxy,System.String,System.Net.Http.HttpMethod,System.String,``1,System.String)">
+            <summary>
+            Sends a message to the specified HTTP client.
+            </summary>
+            <typeparam name="TResponse">The type of the response.</typeparam>
+            <typeparam name="TRequest">The type of the request.</typeparam>
+            <param name="relations">The relations.</param>
+            <param name="httpClientProxy">The HTTP client proxy.</param>
+            <param name="relationName">Name of the relation.</param>
+            <param name="method">The method.</param>
+            <param name="requestContentType">Type of the request content.</param>
+            <param name="dataToSend">The data to send.</param>
+            <param name="acceptType">Type of the accept.</param>
+            <returns>
+            A task executing the request and returning the response.
+            </returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.MethodInvocation.Send``2(DocuWare.Services.Http.Client.IRelations,DocuWare.Services.Http.Client.HttpClientProxy,System.Threading.CancellationToken,System.String,System.Net.Http.HttpMethod,System.String,``1,System.String)">
+            <summary>
+            Sends a message to the specified HTTP client.
+            </summary>
+            <typeparam name="TResponse">The type of the response.</typeparam>
+            <typeparam name="TRequest">The type of the request.</typeparam>
+            <param name="relations">The relations.</param>
+            <param name="httpClientProxy">The HTTP client proxy.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <param name="relationName">Name of the relation.</param>
+            <param name="method">The method.</param>
+            <param name="requestContentType">Type of the request content.</param>
+            <param name="dataToSend">The data to send.</param>
+            <param name="acceptType">Type of the accept.</param>
+            <returns>
+            A task executing the request and returning the response.
+            </returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.MethodInvocation.Send``2(DocuWare.Services.Http.Client.IRelationsWithProxy,System.String,System.Net.Http.HttpMethod,System.String,``1,System.String)">
+            <summary>
+            Sends a message to the specified HTTP client.
+            </summary>
+            <typeparam name="TResponse">The type of the response.</typeparam>
+            <typeparam name="TRequest">The type of the request.</typeparam>
+            <param name="relations">The relations.</param>
+            <param name="relationName">Name of the relation.</param>
+            <param name="method">The method.</param>
+            <param name="requestContentType">Type of the request content.</param>
+            <param name="dataToSend">The data to send.</param>
+            <param name="acceptType">Type of the accept.</param>
+            <returns>A task executing the request and returning the response.</returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.MethodInvocation.Send``2(DocuWare.Services.Http.Client.IRelationsWithProxy,System.Threading.CancellationToken,System.String,System.Net.Http.HttpMethod,System.String,``1,System.String)">
+            <summary>
+            Sends a message to the specified HTTP client.
+            </summary>
+            <typeparam name="TResponse">The type of the response.</typeparam>
+            <typeparam name="TRequest">The type of the request.</typeparam>
+            <param name="relations">The relations.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <param name="relationName">Name of the relation.</param>
+            <param name="method">The method.</param>
+            <param name="requestContentType">Type of the request content.</param>
+            <param name="dataToSend">The data to send.</param>
+            <param name="acceptType">Type of the accept.</param>
+            <returns>
+            A task executing the request and returning the response.
+            </returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.MethodInvocation.Send``2(DocuWare.Services.Http.Client.HttpClientProxy,System.String,System.Net.Http.HttpMethod,System.String,``1,System.String)">
+            <summary>
+            Sends a message to the specified HTTP client.
+            </summary>
+            <typeparam name="TResponse">The type of the response.</typeparam>
+            <typeparam name="TRequest">The type of the request.</typeparam>
+            <param name="httpClientProxy">The HTTP client proxy.</param>
+            <param name="uri">The URI.</param>
+            <param name="method">The method.</param>
+            <param name="requestContentType">Type of the request content.</param>
+            <param name="dataToSend">The data to send.</param>
+            <param name="acceptType">Type of the accept.</param>
+            <returns>
+            A task executing the request and returning the response.
+            </returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.MethodInvocation.Send``2(DocuWare.Services.Http.Client.HttpClientProxy,System.Threading.CancellationToken,System.String,System.Net.Http.HttpMethod,System.String,``1,System.String)">
+            <summary>
+            Sends a message to the specified HTTP client.
+            </summary>
+            <typeparam name="TResponse">The type of the response.</typeparam>
+            <typeparam name="TRequest">The type of the request.</typeparam>
+            <param name="httpClientProxy">The HTTP client proxy.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <param name="uri">The URI.</param>
+            <param name="method">The method.</param>
+            <param name="requestContentType">Type of the request content.</param>
+            <param name="dataToSend">The data to send.</param>
+            <param name="acceptType">Type of the accept.</param>
+            <returns>
+            A task executing the request and returning the response.
+            </returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.MethodInvocation.Send``1(DocuWare.Services.Http.Client.HttpClientProxy,System.String,System.Net.Http.HttpMethod,System.Net.Http.HttpContent,System.String)">
+            <summary>
+            Sends a message to the specified HTTP client.
+            </summary>
+            <typeparam name="TResponse">The type of the response.</typeparam>
+            <param name="httpClientProxy">The HTTP client proxy.</param>
+            <param name="uri">The URI.</param>
+            <param name="method">The method.</param>
+            <param name="dataToSend">The content to send.</param>
+            <param name="acceptType">Type of the accept.</param>
+            <returns>
+            A task executing the request and returning the response.
+            </returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.MethodInvocation.Send``1(DocuWare.Services.Http.Client.HttpClientProxy,System.Threading.CancellationToken,System.String,System.Net.Http.HttpMethod,System.Net.Http.HttpContent,System.String)">
+            <summary>
+            Sends a message to the specified HTTP client.
+            </summary>
+            <typeparam name="TResponse">The type of the response.</typeparam>
+            <param name="httpClientProxy">The HTTP client proxy.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <param name="uri">The URI.</param>
+            <param name="method">The method.</param>
+            <param name="dataToSend">The content to send.</param>
+            <param name="acceptType">Type of the accept.</param>
+            <returns>
+            A task executing the request and returning the response.
+            </returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.MethodInvocation.Send``1(DocuWare.Services.Http.Client.IRelationsWithProxy,System.String,System.Net.Http.HttpMethod,System.Net.Http.HttpContent,System.String)">
+            <summary>
+            Sends a message to the specified HTTP client.
+            </summary>
+            <typeparam name="TResponse">The type of the response.</typeparam>
+            <param name="relations">The relations.</param>
+            <param name="relationName">Name of the relation.</param>
+            <param name="method">The method.</param>
+            <param name="dataToSend">The data to send.</param>
+            <param name="acceptType">Type of the accept.</param>
+            <returns>A task executing the request and returning the response.</returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.MethodInvocation.Send``1(DocuWare.Services.Http.Client.IRelationsWithProxy,System.Threading.CancellationToken,System.String,System.Net.Http.HttpMethod,System.Net.Http.HttpContent,System.String)">
+            <summary>
+            Sends a message to the specified HTTP client.
+            </summary>
+            <typeparam name="TResponse">The type of the response.</typeparam>
+            <param name="relations">The relations.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <param name="relationName">Name of the relation.</param>
+            <param name="method">The method.</param>
+            <param name="dataToSend">The data to send.</param>
+            <param name="acceptType">Type of the accept.</param>
+            <returns>
+            A task executing the request and returning the response.
+            </returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.MethodInvocation.CreateMessageBody``1(``0,System.String)">
+            <summary>
+            Creates the message body.
+            </summary>
+            <typeparam name="TRequest">The type of the request.</typeparam>
+            <param name="dataToSend">The data to send.</param>
+            <param name="requestContentType">Type of the request content.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.MethodInvocation.Get``1(DocuWare.Services.Http.Client.IRelations,System.Net.Http.HttpClient,System.String,System.String[])">
+            <summary>
+            Sends a HTTP GET message to the specified HTTP client.
+            </summary>
+            <typeparam name="TResponse">The type of the response.</typeparam>
+            <param name="relations">The relations.</param>
+            <param name="httpClient">The HTTP client.</param>
+            <param name="relationName">Name of the relation.</param>
+            <param name="acceptType">Type of the accept.</param>
+            <returns>A task executing the request and returning the response.</returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.MethodInvocation.Get``1(DocuWare.Services.Http.Client.IRelations,System.Net.Http.HttpClient,System.Threading.CancellationToken,System.String,System.String[])">
+            <summary>
+            Sends a HTTP GET message to the specified HTTP client.
+            </summary>
+            <typeparam name="TResponse">The type of the response.</typeparam>
+            <param name="relations">The relations.</param>
+            <param name="httpClient">The HTTP client.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <param name="relationName">Name of the relation.</param>
+            <param name="acceptType">Type of the accept.</param>
+            <returns>
+            A task executing the request and returning the response.
+            </returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.MethodInvocation.Get``1(DocuWare.Services.Http.Client.IRelationsWithProxy,System.String,System.String[])">
+            <summary>
+            Sends a HTTP GET message to the specified HTTP client.
+            </summary>
+            <typeparam name="TResponse">The type of the response.</typeparam>
+            <param name="relations">The relations.</param>
+            <param name="relationName">Name of the relation.</param>
+            <param name="acceptType">Type of the accept.</param>
+            <returns>A task executing the request and returning the response.</returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.MethodInvocation.Get``1(DocuWare.Services.Http.Client.IRelationsWithProxy,System.Threading.CancellationToken,System.String,System.String[])">
+            <summary>
+            Sends a HTTP GET message to the specified HTTP client.
+            </summary>
+            <typeparam name="TResponse">The type of the response.</typeparam>
+            <param name="relations">The relations.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <param name="relationName">Name of the relation.</param>
+            <param name="acceptType">Type of the accept.</param>
+            <returns>
+            A task executing the request and returning the response.
+            </returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.MethodInvocation.Delete``1(DocuWare.Services.Http.Client.IRelations,System.Net.Http.HttpClient,System.String,System.String[])">
+            <summary>
+            Sends a HTTP DELETE message to the specified HTTP client.
+            </summary>
+            <typeparam name="TResponse">The type of the response.</typeparam>
+            <param name="relations">The relations.</param>
+            <param name="httpClient">The HTTP client.</param>
+            <param name="relationName">Name of the relation.</param>
+            <param name="acceptType">Type of the accept.</param>
+            <returns>A task executing the request and returning the response.</returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.MethodInvocation.Delete``1(DocuWare.Services.Http.Client.IRelations,System.Net.Http.HttpClient,System.Threading.CancellationToken,System.String,System.String[])">
+            <summary>
+            Sends a HTTP DELETE message to the specified HTTP client.
+            </summary>
+            <typeparam name="TResponse">The type of the response.</typeparam>
+            <param name="relations">The relations.</param>
+            <param name="httpClient">The HTTP client.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <param name="relationName">Name of the relation.</param>
+            <param name="acceptType">Type of the accept.</param>
+            <returns>
+            A task executing the request and returning the response.
+            </returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.MethodInvocation.Delete``1(DocuWare.Services.Http.Client.IRelationsWithProxy,System.String,System.String[])">
+            <summary>
+            Sends a HTTP DELETE message to the specified HTTP client.
+            </summary>
+            <typeparam name="TResponse">The type of the response.</typeparam>
+            <param name="relations">The relations.</param>
+            <param name="relationName">Name of the relation.</param>
+            <param name="acceptType">Type of the accept.</param>
+            <returns>A task executing the request and returning the response.</returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.MethodInvocation.Delete``1(DocuWare.Services.Http.Client.IRelationsWithProxy,System.Threading.CancellationToken,System.String,System.String[])">
+            <summary>
+            Sends a HTTP DELETE message to the specified HTTP client.
+            </summary>
+            <typeparam name="TResponse">The type of the response.</typeparam>
+            <param name="relations">The relations.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <param name="relationName">Name of the relation.</param>
+            <param name="acceptType">Type of the accept.</param>
+            <returns>
+            A task executing the request and returning the response.
+            </returns>
+        </member>
+        <member name="T:DocuWare.Services.Http.Client.RelationExtension">
+            <summary>
+            Helpers for handling links.
+            </summary>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.RelationExtension.GetLink(System.Collections.Generic.IEnumerable{DocuWare.Services.Http.Client.Link},System.String)">
+            <summary>
+            Gets the link by its name.
+            </summary>
+            <param name="links">The links.</param>
+            <param name="relationName">Name of the relation.</param>
+            <returns>The link, if it exists; <c>null</c> otherwise.</returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.RelationExtension.GetLink(DocuWare.Services.Http.Client.IRelations,System.String)">
+            <summary>
+            Gets the link by its name.
+            </summary>
+            <param name="linkable">The linkable.</param>
+            <param name="relationName">Name of the relation.</param>
+            <returns>The link, if it exists; <c>null</c> otherwise.</returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.RelationExtension.GetRelationUri(DocuWare.Services.Http.Client.IRelations,System.String)">
+            <summary>
+            Gets the URI of the relation specified by the name.
+            </summary>
+            <param name="relations">The relations.</param>
+            <param name="relationName">Name of the relation.</param>
+            <returns>The link, if it exists; <c>null</c> otherwise.</returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.RelationExtension.GetRelationUriOrThrow(DocuWare.Services.Http.Client.IRelations,System.String)">
+            <summary>
+            Gets the URI of the relation specified by the name.
+            </summary>
+            <param name="relations">The relations.</param>
+            <param name="relationName">Name of the relation.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException">The specified link is not found.</exception>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.RelationExtension.HasRelationUri(DocuWare.Services.Http.Client.IRelations,System.String)">
+            <summary>
+            Determines whether the specified link exists.
+            </summary>
+            <param name="relations">The relations.</param>
+            <param name="relationName">Name of the relation.</param>
+            <returns>
+              <c>true</c> if the specified link exists; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:DocuWare.Services.Http.Client.Link">
+            <remarks/>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.Link.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+        <member name="P:DocuWare.Services.Http.Client.Link.rel">
+            <summary>
+            The relation name of this link.
+            </summary>
+        </member>
+        <member name="P:DocuWare.Services.Http.Client.Link.href">
+            <summary>
+            The URI this link points to.
+            </summary>
+        </member>
+        <member name="T:DocuWare.Services.Http.Client.Links">
+            <remarks/>
+            <summary>
+            A collection of links (relations).
+            </summary>
+        </member>
+        <member name="T:DocuWare.Services.Http.Client.Error">
+            <remarks/>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.Error.#ctor">
+            <summary>
+            Creates a new instance of this class
+            </summary>
+        </member>
+        <member name="T:DocuWare.Services.Http.Client.UriTemplateDescriptions">
+            <remarks/>
+            <summary>
+            A collection of uri templates.
+            </summary>
+        </member>
+        <member name="T:DocuWare.Services.Http.Client.UriTemplateDescription">
+            <remarks/>
+        </member>
+        <member name="P:DocuWare.Services.Http.Client.UriTemplateDescription.Name">
+            <summary>
+            The name of this template.
+            </summary>
+        </member>
+        <member name="P:DocuWare.Services.Http.Client.UriTemplateDescription.UriPattern">
+            <summary>
+            The URI template.
+            </summary>
+        </member>
+        <member name="P:DocuWare.Services.Http.Client.UriTemplateDescription.FurtherReading">
+            <summary>
+            Gets a link for further readings.
+            </summary>
+        </member>
+        <member name="T:DocuWare.Services.Http.Client.UriTemplateParameter">
+            <remarks/>
+            <summary>
+            Describes a parameter of an URI template.
+            </summary>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.UriTemplateParameter.#ctor">
+            <summary>
+            Creates a new instance of this class
+            </summary>
+        </member>
+        <member name="P:DocuWare.Services.Http.Client.UriTemplateParameter.Name">
+            <summary>
+            The name of this URI parameter.
+            </summary>
+        </member>
+        <member name="P:DocuWare.Services.Http.Client.UriTemplateParameter.IsOptional">
+            <summary>
+            Gets if the parameter can be ommitted.
+            </summary>
+        </member>
+        <member name="P:DocuWare.Services.Http.Client.UriTemplateParameter.DefaultValue">
+            <summary>
+            Gets the default parameter in case the parameter is optional and the parameter has a default value.
+            </summary>
+        </member>
+        <member name="P:DocuWare.Services.Http.Client.UriTemplateParameter.FurtherReading">
+            <summary>
+            Gets a link for further readings.
+            </summary>
+        </member>
+        <member name="P:DocuWare.Services.Http.Client.UriTemplateParameter.Type">
+            <summary>
+            Gets the type of this parameter.
+            </summary>
+        </member>
+        <member name="P:DocuWare.Services.Http.Client.UriTemplateParameter.TypeDescriptionUri">
+            <summary>
+            Gets the a link for further readings about this parameter's type.
+            </summary>
+        </member>
+        <member name="T:DocuWare.Services.Http.Client.UriInvocation">
+            <remarks/>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.UriInvocation.#ctor">
+            <summary>
+            Creates a new instance of this class
+            </summary>
+        </member>
+        <member name="P:DocuWare.Services.Http.Client.UriInvocation.Tag">
+            <summary>
+            Application specific tag for the method.
+            </summary>
+        </member>
+        <member name="T:DocuWare.Services.Http.Client.TypeReference">
+            <remarks/>
+        </member>
+        <member name="T:DocuWare.Services.Http.Client.StringWriterUTF8">
+            <summary>
+            A string write using UTF8 encoding.
+            </summary>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.StringWriterUTF8.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocuWare.Services.Http.Client.StringWriterUTF8"/> class.
+            </summary>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.StringWriterUTF8.#ctor(System.IFormatProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocuWare.Services.Http.Client.StringWriterUTF8"/> class.
+            </summary>
+            <param name="formatProvider">An <see cref="T:System.IFormatProvider" /> object that controls formatting.</param>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.StringWriterUTF8.#ctor(System.Text.StringBuilder,System.IFormatProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocuWare.Services.Http.Client.StringWriterUTF8"/> class.
+            </summary>
+            <param name="sb">The StringBuilder to write to.</param>
+            <param name="formatProvider">An <see cref="T:System.IFormatProvider" /> object that controls formatting.</param>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.StringWriterUTF8.#ctor(System.Text.StringBuilder)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocuWare.Services.Http.Client.StringWriterUTF8"/> class.
+            </summary>
+            <param name="sb">The StringBuilder to write to.</param>
+        </member>
+        <member name="P:DocuWare.Services.Http.Client.StringWriterUTF8.Encoding">
+            <summary>
+            Gets the <see cref="T:System.Text.Encoding" /> in which the output is written.
+            </summary>
+            <returns>The Encoding in which the output is written.</returns>
+        </member>
+        <member name="T:DocuWare.Services.Http.Client.UriTemplateResolver">
+            <summary>
+            Taken from https://raw.github.com/tavis-software/UriTemplates/master/src/UriTemplates/UriTemplate.cs
+            but then I modified it...
+            </summary>
+        </member>
+        <member name="T:DocuWare.Services.Http.Client.UriPattern">
+            <summary>
+            A class for resolving URI pattern.
+            </summary>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.UriPattern.Resolve(System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Object}})">
+            <summary>
+            Resolves the specified pattern.
+            </summary>
+            <param name="pattern">The pattern.</param>
+            <param name="parameters">The parameters as key-value-pairs where the key is the parameter name.</param>
+            <returns>The URI created from the specified pattern.</returns>
+        </member>
+        <member name="T:DocuWare.Services.Http.Client.XmlSerializableExtensions">
+            <summary>
+            Helpers for the XML serialization of HTTP responses.
+            </summary>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.XmlSerializableExtensions.ReadAsXmlSerializableAsync``1(System.Net.Http.HttpResponseMessage)">
+            <summary>
+            Reads the message body as XML.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="httpResponseMessage">The HTTP response message.</param>
+            <returns>
+            The deserialized response.
+            </returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.XmlSerializableExtensions.ReadAsXmlSerializable``1(System.Net.Http.HttpContent)">
+            <summary>
+            Reads the message body as XML.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="content">The content.</param>
+            <returns>The deserialized response.</returns>
+        </member>
+        <member name="T:DocuWare.Services.Http.Client.XmlSerializerRepository">
+            <summary>
+            A repository for managing XML serializers.
+            </summary>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.XmlSerializerRepository.GetSerializer(System.Type)">
+            <summary>
+            Gets the serializer.
+            </summary>
+            <param name="type">The type.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.XmlSerializerRepository.GetSerializer``1">
+            <summary>
+            Gets the serializer.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.XmlSerializerRepository.ParseFromXmlString``1(System.String)">
+            <summary>
+            Parses from the specified XML string.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="xml">The XML.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.XmlSerializerRepository.ParseFromXmlString``1(System.Byte[])">
+            <summary>
+            Parses from the specified compressed XML string.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="compressedXml">The gzip compressed XML.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.XmlSerializerRepository.ReadFromStream``1(System.IO.Stream)">
+            <summary>
+            Reads from stream.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="xml">The XML.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.XmlSerializerRepository.ToXmlString``1(``0,System.Boolean)">
+            <summary>
+            Converts an object to an XML string.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="item">The object to convert.</param>
+            <param name="encodeWithUtf16">if set to <c>true</c> [encode with UTF16].</param>
+            <returns></returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.XmlSerializerRepository.ToCompressedXmlString``1(``0)">
+            <summary>
+            Converts an object to an compressed XML string.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="item">The object to convert.</param>
+            <returns>The array containing the compressed version of the XML string representing the presented item.</returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.Client.XmlSerializerRepository.Write``1(``0,System.IO.Stream)">
+            <summary>
+            Serializes  the specified item as XML to the target stream.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="item">The item.</param>
+            <param name="target">The target.</param>
+        </member>
+        <member name="T:DocuWare.Services.Http.DeserializedHttpResponse">
+            <summary>
+            Provides utility methods serializing HTTP responses.
+            </summary>
+        </member>
+        <member name="P:DocuWare.Services.Http.DeserializedHttpResponse.Type2Serializer">
+            <summary>
+            Maps types to its XML serializer.
+            </summary>
+        </member>
+        <member name="M:DocuWare.Services.Http.DeserializedHttpResponse.Create``1(System.Net.Http.HttpResponseMessage,``0)">
+            <summary>
+            Creates the specified response.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="content">The deserialized content.</param>
+            <param name="response">The response.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.DeserializedHttpResponse.CreateAsync``1(System.Net.Http.HttpResponseMessage)">
+            <summary>
+            Creates the specified response asynchronously.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="response">The response.</param>
+            <returns></returns>
+        </member>
+        <member name="T:DocuWare.Services.Http.DeserializedHttpResponseExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DocuWare.Services.Http.DeserializedHttpResponseExtensions.ToContent``1(System.Threading.Tasks.Task{DocuWare.Services.Http.DeserializedHttpResponse{``0}})">
+            <summary>
+            Returns the content asynchronously.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="response"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.DeserializedHttpResponseExtensions.GetFileName(DocuWare.Services.Http.DeserializedHttpResponse{System.IO.Stream})">
+            <summary>
+            Gets the file name of the HTTP response.
+            </summary>
+            <param name="response">The response.</param>
+            <returns>The file name of the HTTP response.</returns>
+            <exception cref="T:System.ArgumentException">Response does not contain file name header.</exception>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="response"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:DocuWare.Services.Http.DeserializedHttpResponseExtensions.GetFileNameSafe(DocuWare.Services.Http.DeserializedHttpResponse{System.IO.Stream})">
+            <summary>
+            Gets the file name of the HTTP response.
+            </summary>
+            <param name="response">The response.</param>
+            <returns>
+            The file name of the HTTP response. If the response does not contain a file name, <c>null</c> is returned.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="response"/> is <c>null</c>.</exception>
+        </member>
+        <member name="T:DocuWare.Services.Http.DeserializedHttpResponse`1">
+            <summary>
+            Handles a deserialized HTTP response.
+            </summary>
+            <typeparam name="T">The type of the encapsulated response.</typeparam>
+            <remarks>
+            This class encapsulates a HTTP response. It contains the response headers and the deserialized body. Note that different values of <typeparamref name="T"/> causes different handling:
+            <list type="bullet">
+            <item>A <see cref="T:System.String"/> will cause the HTTP response message content to be read as string.</item>
+            <item>A <see cref="T:System.Xml.Linq.XElement"/> will cause the HTTP response message content to be read as <see cref="T:System.Xml.Linq.XElement"/>. There might exceptions be thrown in case the response content is not a valid XML.</item>
+            <item>A <see cref="T:System.IO.Stream"/> will cause the HTTP response message content to be read as <see cref="T:System.IO.Stream"/>. The response content is read streaming, that is, you can consume arbitrary large streams.
+            You should always call <see cref="M:System.IO.Stream.Close"/> after you finished reading the stream in order to close the HTTP connection.
+            </item>
+            <item>For any other values of <typeparamref name="T"/> the response content is deserialized into an intance of type <typeparamref name="T"/>. If the deserialization step fails, the <see cref="T:System.Xml.Serialization.XmlSerializer"/>
+            throws exceptions.</item>
+            </list>
+            All exceptions thrown while the response is deserialized, are wrapped into an <see cref="T:DocuWare.Services.Http.Client.HttpClientRequestException"/> object.
+            </remarks>
+        </member>
+        <member name="P:DocuWare.Services.Http.DeserializedHttpResponse`1.Headers">
+            <summary>
+            Gets the response headers.
+            </summary>
+            <value>
+            The response headers.
+            </value>
+        </member>
+        <member name="P:DocuWare.Services.Http.DeserializedHttpResponse`1.ContentHeaders">
+            <summary>
+            Gets the content headers.
+            </summary>
+            <value>
+            The content headers.
+            </value>
+        </member>
+        <member name="P:DocuWare.Services.Http.DeserializedHttpResponse`1.StatusCode">
+            <summary>
+            Gets the response status code.
+            </summary>
+            <value>
+            The response status code.
+            </value>
+        </member>
+        <member name="P:DocuWare.Services.Http.DeserializedHttpResponse`1.IsSuccessStatusCode">
+            <summary>
+            Gets a value indicating whether the response was successful.
+            </summary>
+            <value>
+            <c>true</c> if the response was successful; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:DocuWare.Services.Http.DeserializedHttpResponse`1.RequestUri">
+            <summary>
+            Gets the request URI.
+            </summary>
+            <value>
+            The request URI.
+            </value>
+        </member>
+        <member name="P:DocuWare.Services.Http.DeserializedHttpResponse`1.Exception">
+            <summary>
+            Gets the exception in case the request failed.
+            </summary>
+            <value>
+            The exception.
+            </value>
+        </member>
+        <member name="P:DocuWare.Services.Http.DeserializedHttpResponse`1.Content">
+            <summary>
+            Gets the deserialized content of the response body.
+            </summary>
+            <value>
+            The deserialized content of the response body.
+            </value>
+            <exception cref="T:DocuWare.Services.Http.Client.HttpClientRequestException"></exception>
+        </member>
+        <member name="M:DocuWare.Services.Http.DeserializedHttpResponse`1.#ctor(System.Net.Http.HttpResponseMessage,`0)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DocuWare.Services.Http.DeserializedHttpResponse`1"/> class.
+            </summary>
+            <param name="responseMessage">The response message.</param>
+            <param name="result">The result.</param>
+        </member>
+        <member name="M:DocuWare.Services.Http.DeserializedHttpResponse`1.op_Implicit(DocuWare.Services.Http.DeserializedHttpResponse{`0})~`0">
+            <summary>
+            Converts the specified response.
+            </summary>
+            <param name="response">The response.</param>
+            <returns>The content of the response.</returns>
+        </member>
+        <member name="M:DocuWare.Services.Http.DeserializedHttpResponse`1.Finalize">
+            <summary>
+            Finalizes an instance of the <see cref="T:DocuWare.Services.Http.DeserializedHttpResponse`1"/> class.
+            </summary>
+        </member>
+        <member name="M:DocuWare.Services.Http.DeserializedHttpResponse`1.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        </member>
+        <member name="M:DocuWare.Services.Http.DeserializedHttpResponse`1.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+    </members>
+</doc>

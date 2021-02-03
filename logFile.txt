@@ -1,0 +1,644 @@
+2019-06-19 16:11:00 [INFO]:	Starting job for xxx2021-02-03 15:02:13 [INFO]:	Application started.
+2021-02-03 15:02:13 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\307026.docx
+2021-02-03 15:02:13 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\307026.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 93, in pullHiddenFields
+    job.casenum=re.search('dwCasenum=(.+)',fulltext,0).group(1)
+AttributeError: 'NoneType' object has no attribute 'group'
+
+2021-02-03 15:02:13 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\315169.docx
+2021-02-03 15:02:13 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\315169.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 97, in pullHiddenFields
+    job.provider=re.search('dwProvider=(.+)',fulltext,0).group(1)
+AttributeError: 'NoneType' object has no attribute 'group'
+
+2021-02-03 15:02:13 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\315181.docx
+2021-02-03 15:02:13 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\315181.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 97, in pullHiddenFields
+    job.provider=re.search('dwProvider=(.+)',fulltext,0).group(1)
+AttributeError: 'NoneType' object has no attribute 'group'
+
+2021-02-03 15:02:13 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\January 27.docx
+2021-02-03 15:02:13 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\January 27.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 93, in pullHiddenFields
+    job.casenum=re.search('dwCasenum=(.+)',fulltext,0).group(1)
+AttributeError: 'NoneType' object has no attribute 'group'
+
+2021-02-03 15:02:13 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$1712 neenan.docx
+2021-02-03 15:02:13 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$1712 neenan.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$1712 neenan.docx'
+
+2021-02-03 15:02:13 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$20 MAIN STREE1.docx
+2021-02-03 15:02:13 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$20 MAIN STREE1.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$20 MAIN STREE1.docx'
+
+2021-02-03 15:02:13 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$20 MAIN STREE2.docx
+2021-02-03 15:02:13 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$20 MAIN STREE2.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$20 MAIN STREE2.docx'
+
+2021-02-03 15:02:13 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$20 MAIN STREET.docx
+2021-02-03 15:02:13 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$20 MAIN STREET.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$20 MAIN STREET.docx'
+
+2021-02-03 15:02:13 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$265697.docx
+2021-02-03 15:02:13 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$265697.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$265697.docx'
+
+2021-02-03 15:02:13 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$268244.docx
+2021-02-03 15:02:13 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$268244.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$268244.docx'
+
+2021-02-03 15:02:13 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$2725 SEBASTRO.docx
+2021-02-03 15:02:13 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$2725 SEBASTRO.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$2725 SEBASTRO.docx'
+
+2021-02-03 15:02:13 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$273960.docx
+2021-02-03 15:02:13 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$273960.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$273960.docx'
+
+2021-02-03 15:02:13 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$275407.docx
+2021-02-03 15:02:13 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$275407.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$275407.docx'
+
+2021-02-03 15:02:13 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$280234.docx
+2021-02-03 15:02:13 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$280234.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$280234.docx'
+
+2021-02-03 15:02:13 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$282514.docx
+2021-02-03 15:02:13 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$282514.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$282514.docx'
+
+2021-02-03 15:02:13 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$300923.docx
+2021-02-03 15:02:13 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$300923.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$300923.docx'
+
+2021-02-03 15:02:13 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$301915.docx
+2021-02-03 15:02:13 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$301915.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$301915.docx'
+
+2021-02-03 15:02:13 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$302450.docx
+2021-02-03 15:02:13 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$302450.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$302450.docx'
+
+2021-02-03 15:02:13 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$305196.docx
+2021-02-03 15:02:13 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$305196.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$305196.docx'
+
+2021-02-03 15:02:13 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$306110.docx
+2021-02-03 15:02:13 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$306110.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$306110.docx'
+
+2021-02-03 15:02:14 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$309473.docx
+2021-02-03 15:02:14 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$309473.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$309473.docx'
+
+2021-02-03 15:02:14 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$310495.docx
+2021-02-03 15:02:14 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$310495.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$310495.docx'
+
+2021-02-03 15:02:14 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$4447 medicaid .docx
+2021-02-03 15:02:14 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$4447 medicaid .docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$4447 medicaid .docx'
+
+2021-02-03 15:02:14 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$5182 no longer rep.docx
+2021-02-03 15:02:14 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$5182 no longer rep.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$5182 no longer rep.docx'
+
+2021-02-03 15:02:14 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$6415 demand letter auto doc.docx
+2021-02-03 15:02:14 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$6415 demand letter auto doc.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$6415 demand letter auto doc.docx'
+
+2021-02-03 15:02:14 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$9192 sampson.docx
+2021-02-03 15:02:14 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$9192 sampson.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$9192 sampson.docx'
+
+2021-02-03 15:02:14 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$9369 Negotiations.docx
+2021-02-03 15:02:14 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$9369 Negotiations.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$9369 Negotiations.docx'
+
+2021-02-03 15:02:14 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$9456 steele.docx
+2021-02-03 15:02:14 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$9456 steele.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$9456 steele.docx'
+
+2021-02-03 15:02:14 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$buttal LEtter.docx
+2021-02-03 15:02:14 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$buttal LEtter.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$buttal LEtter.docx'
+
+2021-02-03 15:02:14 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$cember 31.docx
+2021-02-03 15:02:14 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$cember 31.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$cember 31.docx'
+
+2021-02-03 15:02:14 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$gust 11.docx
+2021-02-03 15:02:14 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$gust 11.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$gust 11.docx'
+
+2021-02-03 15:02:14 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$ivero APIP closing letter.docx
+2021-02-03 15:02:14 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$ivero APIP closing letter.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$ivero APIP closing letter.docx'
+
+2021-02-03 15:02:14 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$ivero NF Closing Letter.docx
+2021-02-03 15:02:14 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$ivero NF Closing Letter.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$ivero NF Closing Letter.docx'
+
+2021-02-03 15:02:14 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$leage Log Instructions.docx
+2021-02-03 15:02:14 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$leage Log Instructions.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$leage Log Instructions.docx'
+
+2021-02-03 15:02:14 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$n mattar release.docx
+2021-02-03 15:02:14 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$n mattar release.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$n mattar release.docx'
+
+2021-02-03 15:02:14 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$NSENT TO SETTLE.docx
+2021-02-03 15:02:14 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$NSENT TO SETTLE.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$NSENT TO SETTLE.docx'
+
+2021-02-03 15:02:14 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$ntact letter.docx
+2021-02-03 15:02:14 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$ntact letter.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$ntact letter.docx'
+
+2021-02-03 15:02:14 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$osing Letter.docx
+2021-02-03 15:02:14 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$osing Letter.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$osing Letter.docx'
+
+2021-02-03 15:02:14 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$sper 1 day.docx
+2021-02-03 15:02:14 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$sper 1 day.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$sper 1 day.docx'
+
+2021-02-03 15:02:14 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$tober 1.docx
+2021-02-03 15:02:14 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$tober 1.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$tober 1.docx'
+
+2021-02-03 15:02:14 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$ttlement doc.docx
+2021-02-03 15:02:14 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$ttlement doc.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$ttlement doc.docx'
+
+2021-02-03 15:02:14 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\~$ttlement docs new.docx
+2021-02-03 15:02:14 [ERROR]:	Error pulling hidden fields for file \\mattarfs03\sharedfiles\storeToDocuware\~$ttlement docs new.docx, Traceback (most recent call last):
+  File "DwAutoStore.py", line 176, in <module>
+    pullHiddenFields(tempJob)
+  File "DwAutoStore.py", line 86, in pullHiddenFields
+    doc = docx.Document(job.file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\api.py", line 25, in Document
+    document_part = Package.open(docx).main_document_part
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\package.py", line 116, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\pkgreader.py", line 32, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+  File "C:\Program Files\Python36\lib\site-packages\docx\opc\phys_pkg.py", line 31, in __new__
+    "Package not found at '%s'" % pkg_file
+docx.opc.exceptions.PackageNotFoundError: Package not found at '\\mattarfs03\sharedfiles\storeToDocuware\~$ttlement docs new.docx'
+
+2021-02-03 15:02:24 [INFO]:	Starting job for \\mattarfs03\sharedfiles\storeToDocuware\February 3.docx
+2021-02-03 15:02:27 [INFO]:	Stored \\mattarfs03\sharedfiles\storeToDocuware\February 3.docx to Docuware.
+2021-02-03 15:02:27 [INFO]:	Cleaned up original file \\mattarfs03\sharedfiles\storeToDocuware\February 3.docx.

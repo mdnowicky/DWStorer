@@ -1,0 +1,667 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DocuWare.Platform.ServerClient.DotNet</name>
+    </assembly>
+    <members>
+        <member name="T:DocuWare.Platform.ServerClient.DocumentLock">
+            <summary>
+            Manages locking and unlocking of a <see cref="T:DocuWare.Platform.ServerClient.Document"/>.
+            </summary>
+        </member>
+        <member name="P:DocuWare.Platform.ServerClient.DocumentLock.Exception">
+            <summary>
+            Gets the exception in case the last lock could not be acquired. It might happen that a single lock request can not be sucessfully executet. In this case this property
+            contains the last exception. If the next lock can be acquired successfully, the value of this property is <c>null</c> again.
+            </summary>
+            <value>
+            The exception.
+            </value>
+        </member>
+        <member name="P:DocuWare.Platform.ServerClient.DocumentLock.Timer">
+            <summary>
+            Gets the timer. This is for testing purposes only.
+            </summary>
+            <value>
+            The timer. This is for testing purposes only.
+            </value>
+        </member>
+        <member name="P:DocuWare.Platform.ServerClient.DocumentLock.IsClosing">
+            <summary>
+            Gets a value indicating whether this instance is closing. This is for testing purposes only.
+            </summary>
+            <value>
+            <c>true</c> if this instance is closing; otherwise, <c>false</c>. This is for testing purposes only.
+            </value>
+        </member>
+        <member name="P:DocuWare.Platform.ServerClient.DocumentLock.IsClosed">
+            <summary>
+            Gets a value indicating whether this instance is closed. This is for testing purposes only.
+            </summary>
+            <value>
+              <c>true</c> if this instance is closed; otherwise, <c>false</c>. This is for testing purposes only.
+            </value>
+        </member>
+        <member name="P:DocuWare.Platform.ServerClient.DocumentLock.ExceptionCount">
+            <summary>
+            Gets the exception count. This is the number of exceptions which occured while this instance was aquiring a lock. The last exception can be accessed by <see cref="P:DocuWare.Platform.ServerClient.DocumentLock.Exception"/>.
+            </summary>
+            <value>
+            The exception count. This is the number of exceptions which occured while this instance was aquiring a lock. The last exception can be accessed by <see cref="P:DocuWare.Platform.ServerClient.DocumentLock.Exception"/>.
+            </value>
+        </member>
+        <member name="P:DocuWare.Platform.ServerClient.DocumentLock.OnError">
+            <summary>
+            Gets or sets action which is called on error.
+            </summary>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.DocumentLock.#ctor(DocuWare.Platform.ServerClient.LockInfo,System.Action{System.Exception},DocuWare.Platform.ServerClient.IDocumentLockRequestHandler)">
+            <summary>
+            Initializes a new instance of the
+            <see cref="T:DocuWare.Platform.ServerClient.DocumentLock" /> class.
+            Locks the document for 60 seconds and re-new this lock on each 30 seconds.
+            </summary>
+            <param name="lockInfo">The lock information.</param>
+            <param name="onError">Action which is called on error.</param>
+            <param name="documentLockRequestHandler">The document lock request handler.</param>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.DocumentLock.CloseAsync">
+            <summary>
+            Unlocks the target document
+            </summary>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.DocumentLock.Dispose">
+            <summary>
+            Releases all resources used by the current instance of <see cref="T:DocuWare.Platform.ServerClient.DocumentLock"/>.
+            </summary>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.DocumentLock.Finalize">
+            <summary>
+            Finalizes this instance.
+            </summary>
+        </member>
+        <member name="T:DocuWare.Platform.ServerClient.DocumentLockExtensions">
+            <summary>
+            Some extensions to lock documents.
+            </summary>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.DocumentLockExtensions.LockAsync(DocuWare.Platform.ServerClient.Document,System.String,System.Int32)">
+            <summary>
+            Locks this instance and returns a <see cref="T:DocuWare.Platform.ServerClient.DocumentLock" /> object which can be used to unlock this document later.
+            </summary>
+            <param name="document">The document.</param>
+            <param name="operation">A client identifier associated with lock operation.</param>
+            <returns>
+            A <see cref="T:DocuWare.Platform.ServerClient.DocumentLock" /> which can be used to unlock this document later.
+            <param name="lockIntervalInSeconds"> Optional parameter to specify interval to specify how often to renew the lock. </param>
+            </returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.DocumentLockExtensions.LockAsync(DocuWare.Platform.ServerClient.Document,System.Action{System.Exception},System.String,System.Int32)">
+            <summary>
+            Locks this instance and returns a <see cref="T:DocuWare.Platform.ServerClient.DocumentLock" /> object which can be used to unlock this document later.
+            </summary>
+            <param name="document">The document.</param>
+            <param name="onError"> Action which is called on error. </param>
+            <param name="operation">A client identifier associated with lock operation.</param>
+            <returns>
+            A <see cref="T:DocuWare.Platform.ServerClient.DocumentLock" /> which can be used to unlock this document later.
+            <param name="lockIntervalInSeconds"> Optional parameter to specify interval to specify how often to renew the lock. </param>
+            </returns>
+        </member>
+        <member name="T:DocuWare.Platform.ServerClient.EasyCheckoutCheckinExtensions">
+            <summary>
+            Some extensions for handling responses which can be stored as files.
+            </summary>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.EasyCheckoutCheckinExtensions.EasyCheckInFromFileSystemAsync(DocuWare.Platform.ServerClient.ServiceConnection,System.IO.FileInfo)">
+            <summary>
+            Checks the specified file in.
+            </summary>
+            <param name="serviceConnection">The service connection.</param>
+            <param name="fileToCheckin">The file to checkin.</param>
+            <returns>A task producing the checked-in response of the check-in operation.</returns>
+            <remarks>The name of <paramref name="fileToCheckin"/> must be taken from <see cref="M:DocuWare.Platform.ServerClient.EasyCheckoutCheckinExtensionsBase.EasyCheckOutToFileSystemAsync(DocuWare.Platform.ServerClient.ServiceConnection,System.String,System.Int32)"/>.</remarks>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.EasyCheckoutCheckinExtensions.EasyCheckInFromFileSystemAsync(DocuWare.Platform.ServerClient.ServiceConnection,System.IO.FileInfo,DocuWare.Platform.ServerClient.CheckInActionParameters)">
+            <summary>
+            Checks the specified file in.
+            </summary>
+            <param name="serviceConnection">The service connection.</param>
+            <param name="fileToCheckin">The file to checkin.</param>
+            <param name="checkInParams">The check in parameters.</param>
+            <returns>A task producing the checked-in response of the check-in operation.</returns>
+            <remarks>The name of <paramref name="fileToCheckin"/> must be taken from <see cref="M:DocuWare.Platform.ServerClient.EasyCheckoutCheckinExtensionsBase.EasyCheckOutToFileSystemAsync(DocuWare.Platform.ServerClient.ServiceConnection,System.String,System.Int32)"/>.</remarks>
+        </member>
+        <member name="T:DocuWare.Platform.ServerClient.EasyFileUploadExtensions">
+            <summary>
+            Some extensions for simple file uploads.
+            </summary>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.EasyFileUploadExtensions.EasyUploadSingleDocumentAsync(DocuWare.Platform.ServerClient.FileCabinet,System.IO.FileInfo,DocuWare.Platform.ServerClient.Document)">
+            <summary>
+            Uploads the specified file as new document to a basket asynchronously.
+            </summary>
+            <param name="fileCabinet">The file cabinet.</param>
+            <param name="documentMetaData">The document meta data. Currently only the fields are used.</param>
+            <param name="file">The file.</param>
+            <returns>
+            The uploaded document's metadata.
+            </returns>
+            <remarks>The document is uploaded as optimal as possible. 
+            That is, if the document is small enough it is uploaded with a single request. 
+            If the file is large, the upload is done chunkwise.
+            </remarks>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.EasyFileUploadExtensions.EasyUploadSingleDocument(DocuWare.Platform.ServerClient.FileCabinet,System.IO.FileInfo,DocuWare.Platform.ServerClient.Document)">
+            <summary>
+            Uploads the specified file as new document to a basket.
+            </summary>
+            <param name="fileCabinet">The file cabinet.</param>
+            <param name="documentMetaData">The document meta data. Currently only the fields are used.</param>
+            <param name="file">The file.</param>
+            <returns>
+            The uploaded document's metadata.
+            </returns>
+            <remarks>The document is uploaded as optimal as possible. 
+            That is, if the document is small enough it is uploaded with a single request. 
+            If the file is large, the upload is done chunkwise.
+            </remarks>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.EasyFileUploadExtensions.EasyUploadSingleDocumentAsync(DocuWare.Platform.ServerClient.FileCabinet,System.IO.FileInfo,DocuWare.Platform.ServerClient.DocumentIndexField[])">
+            <summary>
+            Uploads the specified file as new document to a basket or to a file cabinet asynchronously.
+            </summary>
+            <param name="fileCabinet">The file cabinet.</param>
+            <param name="file">The file.</param>
+            <param name="indexFields">The index fields.</param>
+            <returns>
+            The uploaded document's metadata.
+            </returns>
+            <remarks>The document is uploaded as optimal as possible. 
+            That is, if the document is small enough it is uploaded with a single request. 
+            If the file is large, the upload is done chunkwise.
+            </remarks>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.EasyFileUploadExtensions.EasyUploadSingleDocument(DocuWare.Platform.ServerClient.FileCabinet,System.IO.FileInfo,DocuWare.Platform.ServerClient.DocumentIndexField[])">
+            <summary>
+            Uploads the specified file as new document to a basket or to a file cabinet.
+            </summary>
+            <param name="fileCabinet">The file cabinet.</param>
+            <param name="file">The file.</param>
+            <param name="indexFields">The index fields.</param>
+            <returns>
+            The uploaded document's metadata.
+            </returns>
+            <remarks>The document is uploaded as optimal as possible. 
+            That is, if the document is small enough it is uploaded with a single request. 
+            If the file is large, the upload is done chunkwise.
+            </remarks>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.EasyFileUploadExtensions.EasyUploadDocumentAsync(DocuWare.Platform.ServerClient.FileCabinet,System.IO.FileInfo[],DocuWare.Platform.ServerClient.Document)">
+            <summary>
+            Uploads array of files as new document to a basket asynchronously.
+            </summary>
+            <param name="fileCabinet">The file cabinet.</param>
+            <param name="documentMetaData">The document meta data. Currently only the fields are used.</param>
+            <param name="files">The files.</param>
+            <returns>
+            The uploaded document's metadata.
+            </returns>
+            <remarks>The document is uploaded as optimal as possible. 
+            That is, if the document is small enough it is uploaded with a single request. 
+            If the file is large, the upload is done chunkwise.
+            </remarks>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.EasyFileUploadExtensions.EasyUploadDocument(DocuWare.Platform.ServerClient.FileCabinet,System.IO.FileInfo[],DocuWare.Platform.ServerClient.Document)">
+            <summary>
+            Uploads array of files as new document to a basket.
+            </summary>
+            <param name="fileCabinet">The file cabinet.</param>
+            <param name="documentMetaData">The document meta data. Currently only the fields are used.</param>
+            <param name="files">The files.</param>
+            <returns>
+            The uploaded document's metadata.
+            </returns>
+            <remarks>The document is uploaded as optimal as possible. 
+            That is, if the document is small enough it is uploaded with a single request. 
+            If the file is large, the upload is done chunkwise.
+            </remarks>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.EasyFileUploadExtensions.EasyUploadDocumentAsync(DocuWare.Platform.ServerClient.FileCabinet,System.IO.FileInfo[],DocuWare.Platform.ServerClient.DocumentIndexField[])">
+            <summary>
+            Uploads array of files as new document to a basket.
+            </summary>
+            <param name="fileCabinet">The file cabinet.</param>
+            <param name="files">The files.</param>
+            <param name="indexFields">The index fields.</param>
+            <returns>
+            The uploaded document's metadata.
+            </returns>
+            <remarks>The document is uploaded as optimal as possible. 
+            That is, if the document is small enough it is uploaded with a single request. 
+            If the file is large, the upload is done chunkwise.
+            </remarks>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.EasyFileUploadExtensions.EasyUploadDocument(DocuWare.Platform.ServerClient.FileCabinet,System.IO.FileInfo[],DocuWare.Platform.ServerClient.DocumentIndexField[])">
+            <summary>
+            Uploads array of files as new document to a basket.
+            </summary>
+            <param name="fileCabinet">The file cabinet.</param>
+            <param name="files">The files.</param>
+            <param name="indexFields">The index fields.</param>
+            <returns>
+            The uploaded document's metadata.
+            </returns>
+            <remarks>The document is uploaded as optimal as possible. 
+            That is, if the document is small enough it is uploaded with a single request. 
+            If the file is large, the upload is done chunkwise.
+            </remarks>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.EasyFileUploadExtensions.EasyImportArchive(DocuWare.Platform.ServerClient.FileCabinet,System.IO.FileInfo,DocuWare.Platform.ServerClient.ImportSettings)">
+            <summary>
+            Imports the specified file into a file cabinet.
+            </summary>
+            <param name="fileCabinet">The file cabinet.</param>
+            <param name="file">The file.</param>
+            <param name="importSettings">The settings of the import.</param>
+            <returns>
+            Returns the result of the import operation
+            </returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.EasyFileUploadExtensions.EasyImportArchiveAsync(DocuWare.Platform.ServerClient.FileCabinet,System.IO.FileInfo,DocuWare.Platform.ServerClient.ImportSettings)">
+            <summary>
+            Imports asynchronously the specified file into a file cabinet.
+            </summary>
+            <param name="fileCabinet">The file cabinet.</param>
+            <param name="file">The file.</param>
+            <param name="importSettings">The settings of the import.</param>
+            <returns>
+            Returns the result of the import operation
+            </returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.EasyFileUploadExtensions.EasySynchronize(DocuWare.Platform.ServerClient.FileCabinet,System.IO.FileInfo,DocuWare.Platform.ServerClient.SynchronizationSettings)">
+            <summary>
+            Synchronizes the specified file into a file cabinet.
+            </summary>
+            <param name="fileCabinet">The file cabinet.</param>
+            <param name="file">The file.</param>
+            <param name="synchronizationSettings">The settings of the synchronization.</param>
+            <returns>
+            Returns the result of the synchronization operation
+            </returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.EasyFileUploadExtensions.EasySynchronizeAsync(DocuWare.Platform.ServerClient.FileCabinet,System.IO.FileInfo,DocuWare.Platform.ServerClient.SynchronizationSettings)">
+            <summary>
+            Synchronizes asynchronously the specified file into a file cabinet.
+            </summary>
+            <param name="fileCabinet">The file cabinet.</param>
+            <param name="file">The file.</param>
+            <param name="synchronizationSettings">The settings of the synchronization.</param>
+            <returns>
+            Returns the result of the synchronization operation.
+            </returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.EasyFileUploadExtensions.EasyUploadDocumentAsync(DocuWare.Platform.ServerClient.DialogInfo,System.IO.FileInfo[],DocuWare.Platform.ServerClient.Document)">
+            <summary>
+            Uploads array of files as new document via a store dialog asynchronously.
+            </summary>
+            <param name="dialogInfo">The store dialog.</param>
+            <param name="documentMetaData">The document meta data. Currently only the fields are used.</param>
+            <param name="files">The array of files.</param>
+            <returns>
+            The uploaded document's metadata.
+            </returns>
+            <remarks>The document is uploaded as optimal as possible. 
+            That is, if the document is small enough it is uploaded with a single request. 
+            If the file is large, the upload is done chunkwise.
+            </remarks>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.EasyFileUploadExtensions.EasyUploadDocument(DocuWare.Platform.ServerClient.DialogInfo,System.IO.FileInfo[],DocuWare.Platform.ServerClient.Document)">
+            <summary>
+            Uploads array of files as new document via a store dialog.
+            </summary>
+            <param name="dialogInfo">The store dialog.</param>
+            <param name="documentMetaData">The document meta data. Currently only the fields are used.</param>
+            <param name="files">The array of files.</param>
+            <returns>
+            The uploaded document's metadata.
+            </returns>
+            <remarks>The document is uploaded as optimal as possible. 
+            That is, if the document is small enough it is uploaded with a single request. 
+            If the file is large, the upload is done chunkwise.
+            </remarks>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.EasyFileUploadExtensions.EasyUploadFileAsync(DocuWare.Platform.ServerClient.Document,System.IO.FileInfo)">
+            <summary>
+            Uploads the specified file as new section to the specified document asynchronously.
+            </summary>
+            <param name="document">The document.</param>
+            <param name="file">The file.</param>
+            <returns>The metadata of the added section.</returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.EasyFileUploadExtensions.EasyUploadFile(DocuWare.Platform.ServerClient.Document,System.IO.FileInfo)">
+            <summary>
+            Uploads the specified file as new section to the specified document.
+            </summary>
+            <param name="document">The document.</param>
+            <param name="file">The file.</param>
+            <returns>The metadata of the added section.</returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.EasyFileUploadExtensions.EasyReplaceFileAsync(DocuWare.Platform.ServerClient.Section,System.IO.FileInfo)">
+            <summary>
+            Uploads the specified file as new section to the specified document asynchronously.
+            </summary>
+            <param name="section">The section to modify.</param>
+            <param name="file">The file marking the new content of the section.</param>
+            <returns>
+            The metadata of the modified section.
+            </returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.EasyFileUploadExtensions.EasyReplaceFile(DocuWare.Platform.ServerClient.Section,System.IO.FileInfo)">
+            <summary>
+            Uploads the specified file as new section to the specified document.
+            </summary>
+            <param name="section">The section to modify.</param>
+            <param name="file">The file marking the new content of the section.</param>
+            <returns>
+            The metadata of the modified section.
+            </returns>
+        </member>
+        <member name="T:DocuWare.Platform.ServerClient.FileCabinetExtensions">
+            <summary>
+            Extensions for the file cabinet.
+            </summary>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.FileCabinetExtensions.UploadDocument(DocuWare.Platform.ServerClient.FileCabinet,DocuWare.Platform.ServerClient.Document,System.IO.FileInfo[])">
+            <summary>
+            Uploads the specified document.
+            </summary>
+            <param name="fileCabinet">The file cabinet.</param>
+            <param name="document">The document.</param>
+            <param name="file">The file.</param>
+            <returns>The uploaded document's metadata.</returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.FileCabinetExtensions.UploadDocumentAsync(DocuWare.Platform.ServerClient.FileCabinet,DocuWare.Platform.ServerClient.Document,System.IO.FileInfo[])">
+            <summary>
+            Uploads the document asynchronously.
+            </summary>
+            <param name="fileCabinet">The file cabinet.</param>
+            <param name="document">The document.</param>
+            <param name="file">The file.</param>
+            <returns>A task which uploads the document and returns the uploaded document's metadata.</returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.FileCabinetExtensions.UploadDocument(DocuWare.Platform.ServerClient.FileCabinet,System.IO.FileInfo[])">
+            <summary>
+            Uploads the specified document.
+            </summary>
+            <param name="fileCabinet">The file cabinet.</param>
+            <param name="file">The file.</param>
+            <returns>The uploaded document's metadata.</returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.FileCabinetExtensions.ImportArchive(DocuWare.Platform.ServerClient.FileCabinet,System.IO.FileInfo)">
+            <summary>
+            Uploads the specified document.
+            </summary>
+            <param name="fileCabinet">The file cabinet.</param>
+            <param name="file">The file.</param>
+            <returns>The uploaded document's metadata.</returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.FileCabinetExtensions.ImportArchive(DocuWare.Platform.ServerClient.FileCabinet,System.IO.FileInfo,DocuWare.Platform.ServerClient.ImportSettings)">
+            <summary>
+            Uploads the specified document.
+            </summary>
+            <param name="fileCabinet">The file cabinet.</param>
+            <param name="file">The file.</param>
+            <param name="settings">The settings of the import.</param>
+            <returns>The uploaded document's metadata.</returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.FileCabinetExtensions.Synchronize(DocuWare.Platform.ServerClient.FileCabinet,System.IO.FileInfo,DocuWare.Platform.ServerClient.SynchronizationSettings)">
+            <summary>
+            Uploads the specified document.
+            </summary>
+            <param name="fileCabinet">The file cabinet.</param>
+            <param name="file">The file.</param>
+            <param name="settings">The settings of the import.</param>
+            <returns>The uploaded document's metadata.</returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.FileCabinetExtensions.UploadDocumentAsync(DocuWare.Platform.ServerClient.FileCabinet,System.IO.FileInfo[])">
+            <summary>
+            Uploads the specified document asynchronously.
+            </summary>
+            <param name="fileCabinet">The file cabinet.</param>
+            <param name="file">The file.</param>
+            <returns>A task which uploads the document and returns the uploaded document's metadata.</returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.FileCabinetExtensions.UploadDocument(DocuWare.Platform.ServerClient.DialogInfo,DocuWare.Platform.ServerClient.Document,System.IO.FileInfo[])">
+            <summary>
+            Uploads the document.
+            </summary>
+            <param name="dialog">The store dialog which is used to fill index data.</param>
+            <param name="document">The document.</param>
+            <param name="file">The file.</param>
+            <returns>The uploaded document's metadata.</returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.FileCabinetExtensions.UploadDocumentAsync(DocuWare.Platform.ServerClient.DialogInfo,DocuWare.Platform.ServerClient.Document,System.IO.FileInfo[])">
+            <summary>
+            Uploads the document asynchronous.
+            </summary>
+            <param name="dialog">The store dialog which is used to fill index data.</param>
+            <param name="document">The document.</param>
+            <param name="file">The file.</param>
+            <returns>A task which uploads the document and returns the uploaded document's metadata.</returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.FileCabinetExtensions.AddDocumentSections(DocuWare.Platform.ServerClient.Document,System.IO.FileInfo[])">
+            <summary>
+            Appends one or more new sections to the specified document.
+            </summary>
+            <param name="document">The document.</param>
+            <param name="file">The file.</param>
+            <returns>The modified document.</returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.FileCabinetExtensions.AddDocumentSectionsAsync(DocuWare.Platform.ServerClient.Document,System.IO.FileInfo[])">
+            <summary>
+            Appends one or more new sections to the specified document asynchronously.
+            </summary>
+            <param name="document">The document.</param>
+            <param name="file">The file.</param>
+            <returns>
+            A task which uploads the document and returns the uploaded document's metadata.
+            </returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.FileCabinetExtensions.UploadSectionAsync(DocuWare.Platform.ServerClient.Document,System.IO.FileInfo)">
+            <summary>
+            Appends one section to the specified document asynchronously.
+            </summary>
+            <param name="document">The document.</param>
+            <param name="file">The file.</param>
+            <returns>
+            A task which uploads the document and returns the uploaded section's metadata.
+            </returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.FileCabinetExtensions.ChunkUploadDocument(DocuWare.Platform.ServerClient.FileCabinet,System.IO.FileInfo,System.Int32)">
+            <summary>
+            Upload the specified document in chunks.
+            </summary>
+            <param name="fileCabinet">The file cabinet.</param>
+            <param name="file">The file.</param>
+            <param name="chunkSize">Size of the chunk.</param>
+            <returns>The uploaded document's metadata.</returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.FileCabinetExtensions.ChunkUploadDocument(DocuWare.Platform.ServerClient.FileCabinet,System.IO.FileInfo[],System.Int32)">
+            <summary>
+            Upload the specified document with multiple files in chunks.
+            </summary>
+            <param name="fileCabinet">The file cabinet.</param>
+            <param name="files">The files.</param>
+            <param name="chunkSize">Size of the chunk.</param>
+            <returns>The uploaded document's metadata.</returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.FileCabinetExtensions.ChunkUploadDocument(DocuWare.Platform.ServerClient.FileCabinet,DocuWare.Platform.ServerClient.Document,System.IO.FileInfo,System.Int32)">
+            <summary>
+            Upload the specified document in chunks.
+            </summary>
+            <param name="fileCabinet">The file cabinet.</param>
+            <param name="file">The file.</param>
+            <param name="chunkSize">Size of the chunk.</param>
+            <param name="document">The document.</param>
+            <returns>The uploaded document's metadata.</returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.FileCabinetExtensions.ChunkUploadDocument(DocuWare.Platform.ServerClient.FileCabinet,DocuWare.Platform.ServerClient.Document,System.IO.FileInfo[],System.Int32)">
+            <summary>
+            Upload the specified document with multiple files in chunks.
+            </summary>
+            <param name="fileCabinet">The file cabinet.</param>
+            <param name="files">The files.</param>
+            <param name="chunkSize">Size of the chunk.</param>
+            <param name="document">The document.</param>
+            <returns>The uploaded document's metadata.</returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.FileCabinetExtensions.ChunkUploadDocument(DocuWare.Platform.ServerClient.DialogInfo,DocuWare.Platform.ServerClient.Document,System.IO.FileInfo,System.Int32)">
+            <summary>
+            Upload the specified document in chunks.
+            </summary>
+            <param name="dialog">The store dialog which is used to fill index data.</param>
+            <param name="file">The file.</param>
+            <param name="chunkSize">Size of the chunk.</param>
+            <param name="document">The document.</param>
+            <returns>The uploaded document's metadata.</returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.FileCabinetExtensions.ChunkUploadDocument(DocuWare.Platform.ServerClient.DialogInfo,DocuWare.Platform.ServerClient.Document,System.IO.FileInfo[],System.Int32)">
+            <summary>
+            Upload the specified document with multiple files in chunks.
+            </summary>
+            <param name="dialog">The store dialog which is used to fill index data.</param>
+            <param name="document">The document.</param>
+            <param name="files">The files.</param>
+            <param name="chunkSize">Size of the chunk.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.FileCabinetExtensions.ChunkUploadSection(DocuWare.Platform.ServerClient.Section,System.IO.FileInfo,System.Int32)">
+            <summary>
+            Replaces the content of a section with the passed file
+            Upload the specified file in chunks.
+            </summary>
+            <param name="section">The section whose content is replaced.</param>
+            <param name="file">The file.</param>
+            <param name="chunkSize">Size of the chunk.</param>
+            <returns>The changed section's metadata.</returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.FileCabinetExtensions.ChunkAddSection(DocuWare.Platform.ServerClient.Document,System.IO.FileInfo,System.Int32)">
+            <summary>
+            Adds a section to a document using chunked upload.
+            </summary>
+            <param name="document">The document.</param>
+            <param name="file">The file.</param>
+            <param name="chunkSize">Size of the chunk in bytes.</param>
+            <returns>The new section's metadata.</returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.FileCabinetExtensions.ChunkImportArchive(DocuWare.Platform.ServerClient.FileCabinet,System.IO.FileInfo,DocuWare.Platform.ServerClient.ImportSettings)">
+            <summary>
+            Uploads the import package in chunks.
+            </summary>
+            <param name="fileCabinet">The file cabinet.</param>
+            <param name="file">The file.</param>
+            <param name="importSettings">The setting used by the import.</param>
+            <returns>The uploaded document's metadata.</returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.FileCabinetExtensions.ChunkSynchronize(DocuWare.Platform.ServerClient.FileCabinet,System.IO.FileInfo,DocuWare.Platform.ServerClient.SynchronizationSettings)">
+            <summary>
+            Uploads the specified synchronization package in chunks.
+            </summary>
+            <param name="fileCabinet">The file cabinet.</param>
+            <param name="file">The file.</param>
+            <param name="synchronizationSettings">The setting used by the synchronize.</param>
+            <returns>The uploaded document's metadata.</returns>
+        </member>
+        <member name="T:DocuWare.Platform.ServerClient.FileInfoExtensions">
+            <summary>
+            Some wrappers for file info structures.
+            </summary>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.FileInfoExtensions.ToFileUploadInfo(System.IO.FileInfo)">
+            <summary>
+            Converts the specified <see cref="T:System.IO.FileInfo"/> instance to a <see cref="T:DocuWare.Services.Http.Client.IFileUploadInfo"/> instance.
+            </summary>
+            <param name="fileInfo">The <see cref="T:System.IO.FileInfo"/> instance.</param>
+            <returns>The <see cref="T:DocuWare.Services.Http.Client.IFileUploadInfo"/> instance representing the specified <see cref="T:System.IO.FileInfo"/> instance.</returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.FileInfoExtensions.ToFileUploadInfo(System.IO.FileInfo[])">
+            <summary>
+            Converts the specified array of <see cref="T:System.IO.FileInfo"/> instances to an array of <see cref="T:DocuWare.Services.Http.Client.IFileUploadInfo"/> instances.
+            </summary>
+            <param name="fileInfos">The <see cref="T:System.IO.FileInfo"/> instances.</param>
+            <returns>The <see cref="T:DocuWare.Services.Http.Client.IFileUploadInfo"/> instances representing the specified <see cref="T:System.IO.FileInfo"/> instances.</returns>
+        </member>
+        <member name="T:DocuWare.Platform.ServerClient.PlatformClientConfigurationDotNet">
+            <summary>
+            A interface which is used to calculate a hash to identify the machine or device the application is running.
+            </summary>
+            <remarks>The host identification is calculated as a hash of the host name and the domain name. That is, no security critical information is transferred.</remarks>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.PlatformClientConfigurationDotNet.GetHostId">
+            <summary>
+            Gets the host identifier.
+            </summary>
+            <returns>
+            A hash identifying the machine or device the application is running.
+            </returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.PlatformClientConfigurationDotNet.CreateProductInfoHeader(System.String,System.String)">
+            <summary>
+            Creates the product information header.
+            </summary>
+            <param name="appName">Name of the application.</param>
+            <param name="appVersion">The application version.</param>
+            <returns>The <see cref="T:System.Net.Http.Headers.ProductInfoHeaderValue"/> instance.</returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.PlatformClientConfigurationDotNet.CreateProductInfoHeader">
+            <summary>
+            Creates the product information header.
+            </summary>
+            <returns>The <see cref="T:System.Net.Http.Headers.ProductInfoHeaderValue"/> instance.</returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.PlatformClientConfigurationDotNet.AddProductInfoHeaderValueOfExecutingApplication(System.Net.Http.Headers.HttpHeaderValueCollection{System.Net.Http.Headers.ProductInfoHeaderValue})">
+            <summary>
+            Gets the product information header value of executing application.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.PlatformClientConfigurationDotNet.CreateDefaultHttpMessageHandler">
+            <summary>
+            Creates the default HTTP message handler.
+            </summary>
+            <returns>
+            The default message handler which is used when connection to a service in case there is no explicit handler given.
+            </returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.PlatformClientConfigurationDotNet.CreateHandlerForNTLMAuthentication(System.Net.ICredentials)">
+            <summary>
+            Creates a <see cref="T:System.Net.Http.HttpClientHandler" /> instance for handling NTLM authentication.
+            </summary>
+            <param name="credentials">The credentials.</param>
+            <returns>
+              <see cref="T:System.Net.Http.HttpClientHandler" /> instance which uses the specified <paramref name="credentials" />.
+            </returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.PlatformClientConfigurationDotNet.CreateHandlerForNTLMAuthentication(System.Uri,System.String,System.String,System.String)">
+            <summary>
+            Creates a <see cref="T:System.Net.Http.HttpClientHandler" /> instance for handling NTLM authentication.
+            </summary>
+            <param name="serviceUri">The service URI.</param>
+            <param name="userName">Name of the user.</param>
+            <param name="password">The password.</param>
+            <param name="domain">The domain.</param>
+            <returns>
+              <see cref="T:System.Net.Http.HttpClientHandler" /> instance which uses the specified credentials.
+            </returns>
+        </member>
+        <member name="M:DocuWare.Platform.ServerClient.PlatformClientConfigurationDotNet.GetRequestTimeout">
+            <summary>
+            Gets the request timeout.
+            </summary>
+            <returns>
+            The timeout in milliseconds for a request or <c>null</c> if the request timeout is not explicitely set.
+            </returns>
+        </member>
+    </members>
+</doc>
